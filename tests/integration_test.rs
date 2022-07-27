@@ -6,7 +6,7 @@ type Handler = Result<(), Box<dyn std::error::Error>>;
 
 #[test]
 fn run_with_defaults() -> Handler {
-    Command::cargo_bin("catsay")
+    Command::cargo_bin("catsay-1020")
         .expect("binary exists")
         .assert()
         .success()
@@ -16,7 +16,7 @@ fn run_with_defaults() -> Handler {
 
 #[test]
 fn fail_on_non_existing_file() -> Handler {
-    Command::cargo_bin("catsay")
+    Command::cargo_bin("catsay-1020")
         .expect("binary exists")
         .args(&["-f", "non-existing-file"])
         .assert()
